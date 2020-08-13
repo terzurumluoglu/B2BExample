@@ -31,7 +31,7 @@ export class ProductsList {
             let price: number =  i*100;
             let name: string = 'Product ' + i.toString();
             let description: string = name + ' : Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
-            this._products.push(this.createProduct(i, name, description, price, 10));
+            this._products.push(this.createProduct(i, name, description, price, 0));
         }
     }
 }
