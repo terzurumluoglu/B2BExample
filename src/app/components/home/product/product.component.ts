@@ -17,6 +17,6 @@ export class ProductComponent implements OnInit {
   }
 
   addToBasket(product : Product){
-    console.log(product);
+    this._facadeService.addProduct(product);
   }
 }
