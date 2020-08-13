@@ -50,7 +50,11 @@ export class FacadeService {
     this.cartService.updateProduct(product);
   }
 
-  deleteProductFromBasket(product : Product) {
-    this.cartService.deleteProductFromBasket(product);
+  deleteProductFromBasket(productId : number) {
+    this.cartService.deleteProductFromBasket(productId);
+  }
+
+  decreaseProduct(product : Product) {
+    this.cartService.decreaseProduct(product);
   }
 }

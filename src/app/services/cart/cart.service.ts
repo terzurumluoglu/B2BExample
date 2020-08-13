@@ -29,7 +29,11 @@ export class CartService {
     this.store.dispatch(UpdateProduct({ product: product }));
   }
 
-  deleteProductFromBasket(product: Product) {
+  deleteProductFromBasket(productId: number) {
+    this.store.dispatch(DeleteProduct({ id: productId }));
+  }
+
+  decreaseProduct(product: Product) {
     console.log(product.quantity);
     if (product.quantity <= 1) {
       this.store.dispatch(DeleteProduct({ id: product.id }));
