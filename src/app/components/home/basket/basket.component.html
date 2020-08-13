@@ -1,19 +1,14 @@
-<div class="page-header">
-    <!-- <h1>Example page header <small>Subtext for header</small></h1> -->
-    <div class="row">
-        <div class="dropdown" style="float: right;">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="true">
-                Basket ()
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-success">Sepetiniz</li>
+    <li class="list-group-item" *ngFor="let product of products$ | async | cart">
+        <p>{{product?.name}}</p>
+        <div class="row" style="text-align: right;">
+                <div class="btn-group" role="group" aria-label="Second group">
+                    <button type="button" class="btn btn-default" (click)="delete(product)"><b>-</b></button>
+                    <button type="button" class="btn btn-default" disabled><b [innerText]="product?.quantity"></b></button>
+                    <button type="button" class="btn btn-default" (click)="add(product)"><b>+</b></button>
+                    <button type="button" class="btn btn-danger" (click)="remove(product?.id)"><b>x</b></button>
+                </div>
+            </div>
+    </li>
+</ul>
