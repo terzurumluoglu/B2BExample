@@ -1,6 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { ProductService } from "../product/product.service";
 import { Product } from 'src/app/models/product';
+import { CartService } from '../cart/cart.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,14 @@ export class FacadeService {
     return this._productService;
   }
 
+  private _cartService: CartService;
+  public get cartService(): CartService {
+    if (!this._cartService) {
+      this._cartService = this.injector.get(CartService);
+    }
+    return this._cartService;
+  }
+
   constructor(private injector: Injector) { }
 
   getAllProducts(): Product[] {
@@ -25,4 +34,23 @@ export class FacadeService {
     return this.productService.getProduct(id);
   }
 
+  get products$(){
+    return this.cartService.products$;
+  }
+
+  getBasket() {
+    this.cartService.getBasket();
+  }
+
+  addProduct(product : Product) {
+    this.cartService.addProduct(product);
+  }
+
+  updateProduct(product : Product){
+    this.cartService.updateProduct(product);
+  }
+
+  deleteProductFromBasket(product : Product) {
+    this.cartService.deleteProductFromBasket(product);
+  }
 }
