@@ -9,9 +9,17 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <div style="padding: 15px;">
-                        Sepetinizde <strong>5</strong> Farklı ürün bulunmaktadır.
+                    <div class="pd" *ngIf="(products$ | async).length !== 0; else empty">
+                        Sepetinizde <strong [innerText]="(products$ | async | cart).length"></strong> Farklı ürün
+                        bulunmaktadır.
                     </div>
+                    <ng-template #empty>
+                        <div class="pd">
+                            Sepetinizde ürün bulunmaktadır.
+                        </div>
+                    </ng-template>
+                    <!-- <div>
+                    </div> -->
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
