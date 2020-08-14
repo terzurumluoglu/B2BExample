@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FacadeService } from 'src/app/services/facade/facade.service';
 import { Product } from 'src/app/models/product';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product',
@@ -13,7 +14,11 @@ export class ProductComponent implements OnInit {
 
   products : Product[];
   ngOnInit(): void {
-    this.products = this._facadeService.getAllProducts();
+    this.products = this.getAllProducts();
+  }
+
+  getAllProducts(){
+    return this._facadeService.getAllProducts();
   }
 
   addToBasket(product : Product){
