@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavbarComponent } from './navbar.component';
+import { CartService } from 'src/app/services/cart/cart.service';
+import { StoreModule } from '@ngrx/store';
+import { AppReducers } from 'src/app/reducer/reducer';
+import { CartPipe } from 'src/app/pipes/cart/cart.pipe';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -8,7 +12,9 @@ describe('NavbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
+      declarations: [ NavbarComponent,CartPipe ],
+      imports : [StoreModule.forRoot(AppReducers)],
+      providers:[CartService]
     })
     .compileComponents();
   }));

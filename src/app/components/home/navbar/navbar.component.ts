@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FacadeService } from 'src/app/services/facade/facade.service';
+import { Observable,of } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,8 @@ import { FacadeService } from 'src/app/services/facade/facade.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  products$ = this._facadeService.products$;
+  toprak : string = 'TOPRAK';
+  products$ : Observable<any> = this._facadeService.products$;
   constructor(
     private _facadeService: FacadeService
   ) { }

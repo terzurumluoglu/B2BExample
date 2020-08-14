@@ -12,7 +12,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NotfoundComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -25,4 +25,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  // constructor(_cartService: CartService) {
+  //   _cartService.getBasket();
+  // }
+}
