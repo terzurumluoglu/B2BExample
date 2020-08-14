@@ -14,6 +14,6 @@ export class ProductService {
   }
 
   getProduct(id: number) {
-    return this.getProduct(id);
+    return this.productList.getProduct(id);
   }
 }
