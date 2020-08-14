@@ -1,19 +1,19 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Product } from 'src/app/models/product';
+import { Product, ProductsList } from 'src/app/models/product';
 
 @Pipe({
   name: 'cart'
 })
 export class CartPipe implements PipeTransform {
   products: Product[];
+  productsList: ProductsList = new ProductsList();
   transform(datas: Product[]): any {
     this.products = [];
     const quantity: number[] = this.calculateQuantity(datas);
     for (let i = 0; i < quantity.length; i++) {
       if (quantity[i]) {
-        // const id : number = i;
-        const p : Product = datas.find(f => f.id == i);
-        const product : Product = new Product(i,p.name,p.description,p.price,quantity[i]);
+        const p: Product = datas.find(f => f.id == i);
+        const product: Product = this.productsList.createProduct({ id: i, name: p.name, description: p.description, price: p.price, quantity: quantity[i] });
         this.products.push(product);
       }
     }

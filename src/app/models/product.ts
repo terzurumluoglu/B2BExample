@@ -16,8 +16,8 @@ export class Product {
 
 export class ProductsList {
     private _products: Product[] = [];
-    private createProduct(id: number, name: string, description: string, price: number, quantity: number): Product {
-        let product: Product = new Product(id, name, description, price, quantity);
+    public createProduct(p : Product): Product {
+        let product: Product = new Product(p.id, p.name, p.description, p.price, p.quantity);
         return product;
     }
     public getAllProducts(): Product[] {
@@ -31,7 +31,8 @@ export class ProductsList {
             let price: number =  i*100;
             let name: string = 'Product ' + i.toString();
             let description: string = name + ' : Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
-            this._products.push(this.createProduct(i, name, description, price, 0));
+            const p : Product = {id : i,name : name,description : description,price:price,quantity:0};
+            this._products.push(this.createProduct(p));
         }
     }
 }
