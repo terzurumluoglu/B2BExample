@@ -7,16 +7,17 @@ import { HomeModule } from './components/home/home.module';
 import { ServicesModule } from "./services/services.module";
 import { StoreModule } from "@ngrx/store";
 import { AppReducers } from "./reducer/reducer";
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    
     StoreModule.forRoot(AppReducers)
   ],
   providers: [
