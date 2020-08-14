@@ -34,11 +34,9 @@ export class CartService {
   }
 
   decreaseProduct(product: Product) {
-    console.log(product.quantity);
     if (product.quantity <= 1) {
       this.store.dispatch(DeleteProduct({ id: product.id }));
     } else {
-      console.log('Burada');
       this.store.dispatch(DecreaseProduct({ product }));
     }
   }

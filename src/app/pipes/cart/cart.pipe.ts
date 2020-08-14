@@ -17,7 +17,6 @@ export class CartPipe implements PipeTransform {
         this.products.push(product);
       }
     }
-    console.log(this.products);
     return this.products;
   }
 
