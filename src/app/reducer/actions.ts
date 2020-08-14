@@ -10,6 +10,4 @@ export const AddProduct = createAction('Add Product', props<{ product: Product }
 
 export const DeleteProduct = createAction('Delete Product', props<{ id: number }>());
 
-export const UpdateProduct = createAction('Update Product', props<{ product: Product }>());
-
 export const DecreaseProduct = createAction('Decrease Product', props<{ product: Product }>());

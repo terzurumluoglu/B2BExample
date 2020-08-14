@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/reducer/reducer';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { GetProducts, DeleteProduct, AddProduct, UpdateProduct, DecreaseProduct } from 'src/app/reducer/actions';
+import { GetProducts, DeleteProduct, AddProduct, DecreaseProduct } from 'src/app/reducer/actions';
 import { Product } from 'src/app/models/product';
 
 @Injectable({
@@ -23,10 +23,6 @@ export class CartService {
 
   addProduct(product: Product) {
     this.store.dispatch(AddProduct({ product: product }));
-  }
-
-  updateProduct(product: Product) {
-    this.store.dispatch(UpdateProduct({ product: product }));
   }
 
   deleteProductFromBasket(productId: number) {

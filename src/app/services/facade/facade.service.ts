@@ -46,9 +46,6 @@ export class FacadeService {
     this.cartService.addProduct(product);
   }
 
-  updateProduct(product : Product){
-    this.cartService.updateProduct(product);
-  }
 
   deleteProductFromBasket(productId : number) {
     this.cartService.deleteProductFromBasket(productId);

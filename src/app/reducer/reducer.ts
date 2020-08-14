@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { GetProducts, DeleteProduct, AddProduct, UpdateProduct, DecreaseProduct } from './actions';
+import { GetProducts, DeleteProduct, AddProduct, DecreaseProduct } from './actions';
 import { Product } from "../models/product";
 
 interface BasketState {
@@ -20,12 +20,6 @@ const BasketReducer = createReducer(
         {
             ...state,
             products: state.products.concat(product)
-        }
-    )),
-    on(UpdateProduct, (state: BasketState, { product }) => (
-        {
-            ...state,
-            products: state.products.map(p => p.id !== product.id ? p : product)
         }
     )),
     on(DeleteProduct, (state: BasketState, { id }) => ({
