@@ -1,6 +1,6 @@
 # B2BExample
 
-# Açıklama
+## Açıklama
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
 
@@ -17,6 +17,11 @@ Uygulamayı localde açabilmek için `npm start`.
 `npm run build-prod` uygulamayı prod ortamı için derler.
 
 Bunlara ek olarak uygulamayı docker ile de açabilirsiniz.
+
+## Scripts
+
+Prod - Dev - Test ortamlarına derleyebilmek için src/scripts altına 3 adet script dosyası eklendi ve `npm run build-test`,`npm run build-dev`,`npm run build-prod`
+komutlarının bu dosyalardan çalışması sağlandı.
 
 ## Test
 
