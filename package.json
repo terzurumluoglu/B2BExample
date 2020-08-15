@@ -9,9 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     
-    "build-prod" : "ng build --configuration=production",
-    "build-dev" : "ng build --configuration=dev",
-    "build-test" : "ng build --configuration=test"
+    "build-prod": "node src/scripts/prod.js",
+    "build-dev": "node src/scripts/dev.js",
+    "build-test": "node src/scripts/test.js"
   },
   "private": true,
   "dependencies": {
