@@ -1,6 +1,36 @@
 # B2BExample
 
+# Açıklama
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+
+## Uygulama ne yapar?
+
+Ürünler sepete atılır, sepet üzerinden ürün adetleri düzenlenir veya ürün sepetten çıkarılır.
+
+## Nasıl çalıştırılır.
+
+Uygulamayı localde açabilmek için `npm start`.
+
+`npm run build-test` uygulamayı test ortamı için derler.
+`npm run build-dev` uygulamayı dev ortamı için derler.
+`npm run build-prod` uygulamayı prod ortamı için derler.
+
+Bunlara ek olarak uygulamayı docker ile de açabilirsiniz.
+
+## Test
+
+`ng test` unit testleri çalıştırır.
+`src/app/datas` yolunda test için kullanılmak üzere örnek datalar bulunmaktadır.
+
+## Design Pattern
+
+Uygulama için Facade Tasarım deseni tercih edilmiştir.
+Kullanılan diğer servisler (bu projede FacadeService hariç 2 adet) FacadeServis üzerinden çağrılmıştır.
+
+## Componentler Arası Haberleşme
+
+@ngrx/store kullanılarak Componentler arası haberleşme sağlanmıştır.
 
 ## Development server
 
