@@ -13,5 +13,6 @@ let p9: Product = new Product(9, "Product 9", "Product 9 : Lorem ipsum dolor sit
 let p10: Product = new Product(10, "Product 10", "Product 10 : Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 1000, 0);
 
 export const mockProducts: Product[] = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10];
+export const mockProductsRepeating: Product[] = [p1, p1, p2, p3, p4, p4, p4, p4, p9, p10];
 
-export const mockProducts$ : Observable<Product> = of(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10);
+export const mockProducts$: Observable<Product> = of(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10);
